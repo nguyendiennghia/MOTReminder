@@ -1,0 +1,48 @@
+﻿@model Registration
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+<h3>Registered!</h3>
+<form asp-controller="home" asp-action="Index">
+    <div class="text-center">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-append">
+                    <span class="input-group-text fas fa-envelope"></span>
+                </div>
+                <input asp-for="Customer.Email" class="form-control" readonly />
+            </div>
+            <div class="input-group">
+                <div class="input-group-append" title="Registration number">
+                    <span class="input-group-text fas fa-car"></span>
+                </div>
+                <input asp-for="Customer.Vehicles[0].RegistrationNumber" class="form-control" readonly />
+            </div>
+            <div class="input-group">
+                <div class="input-group-append" title="Manufacturer">
+                    <span class="input-group-text fas fa-building"></span>
+                </div>
+                <input asp-for="Customer.Vehicles[0].Manufacturer" class="form-control" readonly />
+            </div>
+            <div class="input-group">
+                <div class="input-group-append" title="Make">
+                    <span class="input-group-text fas fa-angle-double-down"></span>
+                </div>
+                <input asp-for="Customer.Vehicles[0].Make" class="form-control" readonly />
+            </div>
+            <div class="input-group">
+                <div class="input-group-append" title="Model">
+                    <span class="input-group-text fas fa-angle-down"></span>
+                </div>
+                <input asp-for="Customer.Vehicles[0].Model" class="form-control" readonly />
+            </div>
+            <div class="input-group">
+                <div class="input-group-append" title="MOT expiry">
+                    <span class="input-group-text fas fa-lock"></span>
+                </div>
+                <input asp-for="Customer.Vehicles[0].MOTExpiry" class="form-control" readonly />
+            </div>
+        </div>
+        <input type="submit" name="register" class="btn btn-outline-primary" value="Back" />
+    </div>
+    <h4><i>* You will be notified with expiry before @Model.DaysBeforeExpiry days</i></h4>
+</form>

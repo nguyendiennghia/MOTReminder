@@ -1,0 +1,15 @@
+Framework: .NET Core 3.1 MVC C# as requested
+DB: MSSQL as requested
+DI container: Autofac
+ORM: EF Core
+Test: NUnit (runner), FakeItEasy (mock)
+UI: Twitter Bootstrap, Font Awesome (Client side: libman)
+Others:
+	Background job: Hangfire
+	API: UKVD (Sandbox)
+	Email: Mailkit
+
+*Note:
+- Because UKVD API is only under Sandbox purpose, input registration number must consist of "A". E.g. KP62 RNA
+- To see this standalone-site with background scheduler, use "dotnet run" command
+- To make email reminder takes place after enough short time to test/check, the expiry date is being adjusted via interceptor named VehicleServiceInterceptor. Removing this interceptor in presentation layer to make email background job runs by real period (months for example)
